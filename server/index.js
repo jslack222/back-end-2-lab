@@ -9,4 +9,10 @@ const controller = require("./controller");
 app.use(express.json());
 app.use(cors());
 
-app.listen(4004, () => console.log('rnning on 4004'))
+app.get('/api/houses', controllerFile.getHouses); 
+app.post('/api/houses', controllerFile.createHouses); 
+app.put('/api/houses/:id', controllerFile.updateHouses); 
+app.delete('/api/houses/:id', controllerFile.deleteHouses); 
+
+app.listen(4003, () => console.log('running on 4003'))
+
